@@ -9,12 +9,14 @@
 /* Begin PBXBuildFile section */
 		AD1F4725251FA00E000CA937 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1F4724251FA00E000CA937 /* AppDelegate.swift */; };
 		AD1F4727251FA00E000CA937 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1F4726251FA00E000CA937 /* SceneDelegate.swift */; };
-		AD1F4729251FA00E000CA937 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1F4728251FA00E000CA937 /* ViewController.swift */; };
+		AD1F4729251FA00E000CA937 /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1F4728251FA00E000CA937 /* QuizViewController.swift */; };
 		AD1F472C251FA00E000CA937 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD1F472A251FA00E000CA937 /* Main.storyboard */; };
 		AD1F472E251FA00F000CA937 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD1F472D251FA00F000CA937 /* Assets.xcassets */; };
 		AD1F4731251FA00F000CA937 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD1F472F251FA00F000CA937 /* LaunchScreen.storyboard */; };
 		AD1F473C251FA00F000CA937 /* Quiz_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1F473B251FA00F000CA937 /* Quiz_AppTests.swift */; };
 		AD1F4747251FA00F000CA937 /* Quiz_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1F4746251FA00F000CA937 /* Quiz_AppUITests.swift */; };
+		AD1F477F251FA966000CA937 /* Logo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1F477E251FA966000CA937 /* Logo.swift */; };
+		ADFB3D9825220D0C00E3235D /* enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADFB3D9725220D0C00E3235D /* enums.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +40,7 @@
 		AD1F4721251FA00E000CA937 /* Quiz App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Quiz App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD1F4724251FA00E000CA937 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AD1F4726251FA00E000CA937 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		AD1F4728251FA00E000CA937 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		AD1F4728251FA00E000CA937 /* QuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
 		AD1F472B251FA00E000CA937 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AD1F472D251FA00F000CA937 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AD1F4730251FA00F000CA937 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +51,8 @@
 		AD1F4742251FA00F000CA937 /* Quiz AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Quiz AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD1F4746251FA00F000CA937 /* Quiz_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quiz_AppUITests.swift; sourceTree = "<group>"; };
 		AD1F4748251FA00F000CA937 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AD1F477E251FA966000CA937 /* Logo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logo.swift; sourceTree = "<group>"; };
+		ADFB3D9725220D0C00E3235D /* enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = enums.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,12 +103,12 @@
 		AD1F4723251FA00E000CA937 /* Quiz App */ = {
 			isa = PBXGroup;
 			children = (
+				AD1F477D251FA957000CA937 /* Model */,
+				AD1F475B251FA06B000CA937 /* Storyboards */,
+				AD1F475A251FA049000CA937 /* ViewControllers */,
 				AD1F4724251FA00E000CA937 /* AppDelegate.swift */,
 				AD1F4726251FA00E000CA937 /* SceneDelegate.swift */,
-				AD1F4728251FA00E000CA937 /* ViewController.swift */,
-				AD1F472A251FA00E000CA937 /* Main.storyboard */,
 				AD1F472D251FA00F000CA937 /* Assets.xcassets */,
-				AD1F472F251FA00F000CA937 /* LaunchScreen.storyboard */,
 				AD1F4732251FA00F000CA937 /* Info.plist */,
 			);
 			path = "Quiz App";
@@ -126,6 +130,40 @@
 				AD1F4748251FA00F000CA937 /* Info.plist */,
 			);
 			path = "Quiz AppUITests";
+			sourceTree = "<group>";
+		};
+		AD1F475A251FA049000CA937 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				AD1F4728251FA00E000CA937 /* QuizViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		AD1F475B251FA06B000CA937 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				AD1F472A251FA00E000CA937 /* Main.storyboard */,
+				AD1F472F251FA00F000CA937 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		AD1F477D251FA957000CA937 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				ADFB3D9625220CCC00E3235D /* modes */,
+				AD1F477E251FA966000CA937 /* Logo.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		ADFB3D9625220CCC00E3235D /* modes */ = {
+			isa = PBXGroup;
+			children = (
+				ADFB3D9725220D0C00E3235D /* enums.swift */,
+			);
+			path = modes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,9 +296,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AD1F4729251FA00E000CA937 /* ViewController.swift in Sources */,
+				AD1F4729251FA00E000CA937 /* QuizViewController.swift in Sources */,
 				AD1F4725251FA00E000CA937 /* AppDelegate.swift in Sources */,
+				ADFB3D9825220D0C00E3235D /* enums.swift in Sources */,
 				AD1F4727251FA00E000CA937 /* SceneDelegate.swift in Sources */,
+				AD1F477F251FA966000CA937 /* Logo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -438,6 +478,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "Quiz App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -456,6 +497,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "Quiz App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
