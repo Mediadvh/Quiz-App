@@ -65,6 +65,13 @@
                                     <action selector="nextElementTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ovT-7E-UkP"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dca-4s-QIW">
+                                <rect key="frame" x="157" y="400" width="100" height="30"/>
+                                <state key="normal" title="Next"/>
+                                <connections>
+                                    <action selector="nextTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VFa-hF-mfJ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -75,15 +82,18 @@
                             <constraint firstItem="Mhu-eK-uQq" firstAttribute="top" secondItem="OXb-Lh-DL9" secondAttribute="bottom" constant="40" id="AuK-Nf-Zqw"/>
                             <constraint firstItem="dNq-wC-4Zi" firstAttribute="top" secondItem="Mhu-eK-uQq" secondAttribute="bottom" constant="20" id="GWY-ER-zMC"/>
                             <constraint firstItem="HZh-uO-bvM" firstAttribute="top" secondItem="8v2-Ee-7ZT" secondAttribute="bottom" constant="45" id="IG1-yc-0TJ"/>
+                            <constraint firstItem="dca-4s-QIW" firstAttribute="top" secondItem="8v2-Ee-7ZT" secondAttribute="bottom" constant="45" id="KmG-nz-ska"/>
                             <constraint firstItem="8v2-Ee-7ZT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="137" id="Pkd-7b-teN"/>
                             <constraint firstItem="Mhu-eK-uQq" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="U7F-BA-KPk"/>
                             <constraint firstItem="fpR-3H-mfK" firstAttribute="top" secondItem="8v2-Ee-7ZT" secondAttribute="bottom" constant="45" id="Yo0-kK-625"/>
                             <constraint firstItem="Mhu-eK-uQq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="137" id="dXQ-hW-XS4"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="dNq-wC-4Zi" secondAttribute="trailing" constant="137" id="e5z-yn-VIW"/>
+                            <constraint firstItem="dca-4s-QIW" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="137" id="eay-Zd-lXe"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="8v2-Ee-7ZT" secondAttribute="trailing" constant="137" id="jV0-Pf-LzV"/>
                             <constraint firstItem="HZh-uO-bvM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="56" id="mBY-Ih-1Fs"/>
                             <constraint firstItem="OXb-Lh-DL9" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="pqz-tq-CSK"/>
                             <constraint firstItem="dNq-wC-4Zi" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="137" id="qws-KH-b0O"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="dca-4s-QIW" secondAttribute="trailing" constant="137" id="su4-gv-GIx"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Mhu-eK-uQq" secondAttribute="trailing" constant="137" id="xrr-a7-If7"/>
                         </constraints>
                     </view>
@@ -92,6 +102,9 @@
                         <outlet property="answerTextfield" destination="8v2-Ee-7ZT" id="a37-70-Wbl"/>
                         <outlet property="logo" destination="Mhu-eK-uQq" id="3FH-Gs-G7y"/>
                         <outlet property="modeSelector" destination="OXb-Lh-DL9" id="uRI-KS-vXi"/>
+                        <outlet property="nextButton" destination="dca-4s-QIW" id="TCS-T8-Y3T"/>
+                        <outlet property="nextElement" destination="fpR-3H-mfK" id="ZtN-kk-vdF"/>
+                        <outlet property="showAnswer" destination="HZh-uO-bvM" id="mWt-hn-Qjp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
