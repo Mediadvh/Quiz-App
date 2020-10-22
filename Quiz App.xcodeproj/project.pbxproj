@@ -16,7 +16,7 @@
 		AD1F473C251FA00F000CA937 /* Quiz_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1F473B251FA00F000CA937 /* Quiz_AppTests.swift */; };
 		AD1F4747251FA00F000CA937 /* Quiz_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1F4746251FA00F000CA937 /* Quiz_AppUITests.swift */; };
 		AD1F477F251FA966000CA937 /* Logo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1F477E251FA966000CA937 /* Logo.swift */; };
-		ADFB3D9825220D0C00E3235D /* enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADFB3D9725220D0C00E3235D /* enums.swift */; };
+		AD523FE72523A34600DA5A9F /* FloatingActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD523FE62523A34600DA5A9F /* FloatingActionButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,7 +52,8 @@
 		AD1F4746251FA00F000CA937 /* Quiz_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quiz_AppUITests.swift; sourceTree = "<group>"; };
 		AD1F4748251FA00F000CA937 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AD1F477E251FA966000CA937 /* Logo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logo.swift; sourceTree = "<group>"; };
-		ADFB3D9725220D0C00E3235D /* enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = enums.swift; sourceTree = "<group>"; };
+		AD523FE62523A34600DA5A9F /* FloatingActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingActionButton.swift; sourceTree = "<group>"; };
+		ADF13DEF2523ACCF00D80275 /* Papyrus.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; path = Papyrus.ttc; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +104,7 @@
 		AD1F4723251FA00E000CA937 /* Quiz App */ = {
 			isa = PBXGroup;
 			children = (
+				ADF13DEF2523ACCF00D80275 /* Papyrus.ttc */,
 				AD1F477D251FA957000CA937 /* Model */,
 				AD1F475B251FA06B000CA937 /* Storyboards */,
 				AD1F475A251FA049000CA937 /* ViewControllers */,
@@ -110,6 +112,7 @@
 				AD1F4726251FA00E000CA937 /* SceneDelegate.swift */,
 				AD1F472D251FA00F000CA937 /* Assets.xcassets */,
 				AD1F4732251FA00F000CA937 /* Info.plist */,
+				AD523FE62523A34600DA5A9F /* FloatingActionButton.swift */,
 			);
 			path = "Quiz App";
 			sourceTree = "<group>";
@@ -161,7 +164,6 @@
 		ADFB3D9625220CCC00E3235D /* modes */ = {
 			isa = PBXGroup;
 			children = (
-				ADFB3D9725220D0C00E3235D /* enums.swift */,
 			);
 			path = modes;
 			sourceTree = "<group>";
@@ -297,8 +299,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				AD1F4729251FA00E000CA937 /* QuizViewController.swift in Sources */,
+				AD523FE72523A34600DA5A9F /* FloatingActionButton.swift in Sources */,
 				AD1F4725251FA00E000CA937 /* AppDelegate.swift in Sources */,
-				ADFB3D9825220D0C00E3235D /* enums.swift in Sources */,
 				AD1F4727251FA00E000CA937 /* SceneDelegate.swift in Sources */,
 				AD1F477F251FA966000CA937 /* Logo.swift in Sources */,
 			);

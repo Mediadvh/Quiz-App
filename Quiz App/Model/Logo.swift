@@ -9,22 +9,27 @@ import UIKit
 
 class Logo{
     
-    
-    
+    static var lastUsedRandom: Int = 0
+
     static let logoList = ["PYTHON",
                            "SWIFT",
-                          // "C",
-//                           "JAVA",
+                          "DART",
+                           "JAVA",
                            "KOTLIN",
-                           //"C++",
-                           //"JAVASCRIPT",
+                           "RUBY",
+                           "JAVASCRIPT",
                            "RUST",
                            "GOLANG" ]
     
         static func getRandomIndex() -> (Int) {
-         
+            
         // Returns a random index of the collection
-            return Int.random(in: 0...4)
+            var randNum = Int.random(in: 0...logoList.count-1)
+            lastUsedRandom = randNum
+            while lastUsedRandom == randNum{
+                randNum = Int.random(in: 0...logoList.count-1)
+            }
+            return randNum
             
         }
     

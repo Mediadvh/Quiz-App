@@ -7,6 +7,8 @@
 
 import UIKit
 
+
+
 class QuizViewController: UIViewController{
 
 // MARK: -IBOutlets
@@ -17,70 +19,100 @@ class QuizViewController: UIViewController{
     // buttons
     @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var showAnswer:UIButton!
-    @IBOutlet weak var nextElement:UIButton!
+    @IBOutlet weak var nextLogo:UIButton!
     
+// MARK: -Enums
+    
+    // the mode of app
+    enum Mode {
+        case flashCard
+        case quiz
+    }
+
+    // the state of label
+    enum State{
+        case answer
+        case question
+    }
     
 // MARK: -Variables
     var state : State = .question
-   
     var mode: Mode = .flashCard {
         //each time the value of mode is updated, the code in the didSet block will run
-        
         didSet {
             updateUI()
         }
     }
-    var questionIndex : Int = 0{
-        
+    var questionIndex : Int = 0 {
+        // observer
         didSet{
             if questionIndex == 10 {
                 nextButton.setTitle("Done", for: .normal)
                 questionIndex = 0
-                
             }
         }
     }
+    
+    // keeps track of the logo
     var currentLogoIndex = 0
     
     // Quiz-specific state
     var answerIsCorrect = false
     var correctAnswerCount = 0
-// MARK: ViewControllers functions
+    
+    
+    
+    
+    
+// MARK: -ViewControllers functions
+    //
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Setting the view controller as the textfield's delegate
-        
-        
         // Updating the user interface
         updateUI()
-
-       
+    
     }
     
-// MARK: -IBActions
+// MARK: -IBActions:
     @IBAction func showAnswerTapped(_ sender: Any) {
+        
+        if( answerLabel.text == Logo.logoList[currentLogoIndex] )
+        {
+            // show an alert
+            let alert = UIAlertController(title: "answer's already there❗️", message: "" , preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            present(alert, animated: true, completion: nil)
+            
+        }
         state = .answer
         updateUI()
     }
-    @IBAction func nextElementTapped(_ sender: Any) {
+    @IBAction func nextLogoTapped(_ sender: Any) {
       
         state = .question
         currentLogoIndex = Logo.getRandomIndex()
         updateUI()
     }
     @IBAction func switchModes(_ sender: Any) {
+        // sets mode of UI
         if modeSelector.selectedSegmentIndex == 0 {
             mode = .flashCard
+            currentLogoIndex = Logo.getRandomIndex()
+            updateUI()
         } else {
             mode = .quiz
+            currentLogoIndex = Logo.getRandomIndex()
+            updateUI()
         }
     }
+    
+    // next question
     @IBAction func nextTapped(_ sender: Any){
         
         if (nextButton.currentTitle == "Done"){
             showScore()
-            nextButton.setTitle("Try Again!", for: .normal)
+            answerTextfield.isHidden = true
+            correctAnswerCount = 0
         }else
         {
             nextButton.setTitle("Next", for: .normal)
@@ -90,31 +122,40 @@ class QuizViewController: UIViewController{
             
             if textFieldContents.lowercased() == Logo.logoList[currentLogoIndex].lowercased() {
                 
+                
                 questionIndex += 1
                 answerIsCorrect = true
                 correctAnswerCount += 1
+                
+               
                 
             } else {
                 
                 questionIndex += 1
                 answerIsCorrect = false
+              
+               
             }
             
             state = .answer
             
             currentLogoIndex = Logo.getRandomIndex()
-            updateUI()}
+            updateUI()
+            
+        }
         
     }
 // MARK: -Logic
     func updateFlashCardUI() {
         
         nextButton.isHidden = true
-        nextElement.isHidden = false
+        nextLogo.isHidden = false
         showAnswer.isHidden = false
-        logo.image = UIImage(named : Logo.logoList[currentLogoIndex])
         answerTextfield.isHidden = true
-        answerTextfield.resignFirstResponder()
+        
+        logo.image = UIImage(named : Logo.logoList[currentLogoIndex])
+        
+//        answerTextfield.resignFirstResponder()
         
         switch state {
         case .answer:
@@ -131,30 +172,11 @@ class QuizViewController: UIViewController{
         logo.image = UIImage(named : Logo.logoList[currentLogoIndex])
         answerTextfield.isHidden = false
         nextButton.isHidden = false
-        nextElement.isHidden = true
+        nextLogo.isHidden = true
         showAnswer.isHidden = true
         answerLabel.isHidden = true
         answerTextfield.text = ""
-//         switch state {
-//            case .question:
-//                answerLabel.text = ""
-//            case .answer:
-//                if answerIsCorrect {
-//
-//                    answerTextfield.layer.borderWidth = 2
-//                    answerTextfield.layer.borderColor = #colorLiteral(red: 0, green: 0.7484197021, blue: 0.2804747224, alpha: 1)
-//                    answerTextfield.layer.cornerRadius = 5
-//                    answerTextfield.isUserInteractionEnabled = false
-//                    answerLabel.text = "Correct!"
-//
-//                } else {
-//                    answerTextfield.layer.borderWidth = 2
-//                    answerTextfield.layer.borderColor = #colorLiteral(red: 0.85745579, green: 0.1920336485, blue: 0.1270921528, alpha: 1)
-//                    answerTextfield.layer.cornerRadius = 5
-//                    answerTextfield.isUserInteractionEnabled = false
-//
-//                }
-//            }
+        
        
     }
     
@@ -169,10 +191,24 @@ class QuizViewController: UIViewController{
     
     func showScore(){
         
-        answerLabel.isHidden = false
-        answerLabel.text = "\(correctAnswerCount) out of 10"
+        // present confetti
+        
+
+        // show an alert
+        let alert = UIAlertController(title: "\(correctAnswerCount) out of 10", message: "What do you want to do?", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Try Agian", style: .default, handler: {_ in
+           
+            self.updateUI()
+        }))
+        alert.addAction(UIAlertAction(title: "show Flash Cards", style: .default, handler: { _ in
+            self.mode = .flashCard
+            self.modeSelector.selectedSegmentIndex = 0
+            self.updateUI()
+        }))
+        present(alert,animated: true)
         
         
+        nextButton.setTitle("next", for: .normal)
         
     }
     
