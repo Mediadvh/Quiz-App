@@ -13,8 +13,6 @@
 		AD1F472C251FA00E000CA937 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD1F472A251FA00E000CA937 /* Main.storyboard */; };
 		AD1F472E251FA00F000CA937 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD1F472D251FA00F000CA937 /* Assets.xcassets */; };
 		AD1F4731251FA00F000CA937 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD1F472F251FA00F000CA937 /* LaunchScreen.storyboard */; };
-		AD1F473C251FA00F000CA937 /* Quiz_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1F473B251FA00F000CA937 /* Quiz_AppTests.swift */; };
-		AD1F4747251FA00F000CA937 /* Quiz_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1F4746251FA00F000CA937 /* Quiz_AppUITests.swift */; };
 		AD1F477F251FA966000CA937 /* Logo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1F477E251FA966000CA937 /* Logo.swift */; };
 		AD523FE72523A34600DA5A9F /* FloatingActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD523FE62523A34600DA5A9F /* FloatingActionButton.swift */; };
 /* End PBXBuildFile section */
@@ -46,11 +44,7 @@
 		AD1F4730251FA00F000CA937 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AD1F4732251FA00F000CA937 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AD1F4737251FA00F000CA937 /* Quiz AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Quiz AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		AD1F473B251FA00F000CA937 /* Quiz_AppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quiz_AppTests.swift; sourceTree = "<group>"; };
-		AD1F473D251FA00F000CA937 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AD1F4742251FA00F000CA937 /* Quiz AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Quiz AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		AD1F4746251FA00F000CA937 /* Quiz_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quiz_AppUITests.swift; sourceTree = "<group>"; };
-		AD1F4748251FA00F000CA937 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AD1F477E251FA966000CA937 /* Logo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logo.swift; sourceTree = "<group>"; };
 		AD523FE62523A34600DA5A9F /* FloatingActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingActionButton.swift; sourceTree = "<group>"; };
 		ADF13DEF2523ACCF00D80275 /* Papyrus.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; path = Papyrus.ttc; sourceTree = "<group>"; };
@@ -85,8 +79,6 @@
 			isa = PBXGroup;
 			children = (
 				AD1F4723251FA00E000CA937 /* Quiz App */,
-				AD1F473A251FA00F000CA937 /* Quiz AppTests */,
-				AD1F4745251FA00F000CA937 /* Quiz AppUITests */,
 				AD1F4722251FA00E000CA937 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -115,24 +107,6 @@
 				AD523FE62523A34600DA5A9F /* FloatingActionButton.swift */,
 			);
 			path = "Quiz App";
-			sourceTree = "<group>";
-		};
-		AD1F473A251FA00F000CA937 /* Quiz AppTests */ = {
-			isa = PBXGroup;
-			children = (
-				AD1F473B251FA00F000CA937 /* Quiz_AppTests.swift */,
-				AD1F473D251FA00F000CA937 /* Info.plist */,
-			);
-			path = "Quiz AppTests";
-			sourceTree = "<group>";
-		};
-		AD1F4745251FA00F000CA937 /* Quiz AppUITests */ = {
-			isa = PBXGroup;
-			children = (
-				AD1F4746251FA00F000CA937 /* Quiz_AppUITests.swift */,
-				AD1F4748251FA00F000CA937 /* Info.plist */,
-			);
-			path = "Quiz AppUITests";
 			sourceTree = "<group>";
 		};
 		AD1F475A251FA049000CA937 /* ViewControllers */ = {
@@ -310,7 +284,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AD1F473C251FA00F000CA937 /* Quiz_AppTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -318,7 +291,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AD1F4747251FA00F000CA937 /* Quiz_AppUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

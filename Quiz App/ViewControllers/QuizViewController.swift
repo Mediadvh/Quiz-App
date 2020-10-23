@@ -10,8 +10,11 @@ import UIKit
 
 
 class QuizViewController: UIViewController{
-
-// MARK: -IBOutlets
+    
+    // When you connect your storyboard to your code Xcode inserts two special markers: @IBAction and @IBOutlet. Xcode uses them to understand which of your properties and methods are relevant to Interface Builder.
+    
+    // MARK: -IBOutlets
+    
     @IBOutlet weak var logo: UIImageView!
     @IBOutlet weak var answerLabel: UILabel!
     @IBOutlet weak var answerTextfield : UITextField!
@@ -21,28 +24,31 @@ class QuizViewController: UIViewController{
     @IBOutlet weak var showAnswer:UIButton!
     @IBOutlet weak var nextLogo:UIButton!
     
-// MARK: -Enums
+    // MARK: -Enums
     
     // the mode of app
     enum Mode {
         case flashCard
         case quiz
     }
-
+    
     // the state of label
     enum State{
         case answer
         case question
     }
     
-// MARK: -Variables
+    // MARK: -Conastants & Variables
+
     var state : State = .question
+    
     var mode: Mode = .flashCard {
         //each time the value of mode is updated, the code in the didSet block will run
         didSet {
-            updateUI()
+            //updateUI()
         }
     }
+   
     var questionIndex : Int = 0 {
         // observer
         didSet{
@@ -64,16 +70,19 @@ class QuizViewController: UIViewController{
     
     
     
-// MARK: -ViewControllers functions
+    // MARK: -ViewControllers functions
     //
     override func viewDidLoad() {
         super.viewDidLoad()
         // Updating the user interface
         updateUI()
-    
+        
     }
     
-// MARK: -IBActions:
+    // MARK: -IBActions:
+    
+    
+    
     @IBAction func showAnswerTapped(_ sender: Any) {
         
         if( answerLabel.text == Logo.logoList[currentLogoIndex] )
@@ -88,7 +97,7 @@ class QuizViewController: UIViewController{
         updateUI()
     }
     @IBAction func nextLogoTapped(_ sender: Any) {
-      
+        
         state = .question
         currentLogoIndex = Logo.getRandomIndex()
         updateUI()
@@ -127,14 +136,14 @@ class QuizViewController: UIViewController{
                 answerIsCorrect = true
                 correctAnswerCount += 1
                 
-               
+                
                 
             } else {
                 
                 questionIndex += 1
                 answerIsCorrect = false
-              
-               
+                
+                
             }
             
             state = .answer
@@ -145,17 +154,17 @@ class QuizViewController: UIViewController{
         }
         
     }
-// MARK: -Logic
+    // MARK: -Logic
     func updateFlashCardUI() {
         
         nextButton.isHidden = true
         nextLogo.isHidden = false
         showAnswer.isHidden = false
         answerTextfield.isHidden = true
-        
+        answerLabel.isHidden = false
         logo.image = UIImage(named : Logo.logoList[currentLogoIndex])
         
-//        answerTextfield.resignFirstResponder()
+        answerTextfield.resignFirstResponder()
         
         switch state {
         case .answer:
@@ -166,7 +175,7 @@ class QuizViewController: UIViewController{
         }
         
     }
-
+    
     func updateQuizUI() {
         
         logo.image = UIImage(named : Logo.logoList[currentLogoIndex])
@@ -177,27 +186,27 @@ class QuizViewController: UIViewController{
         answerLabel.isHidden = true
         answerTextfield.text = ""
         
-       
+
     }
     
     func updateUI() {
         switch mode {
         case .flashCard:
+            
             updateFlashCardUI()
         case .quiz:
+            
             updateQuizUI()
         }
     }
     
     func showScore(){
         
-        // present confetti
         
-
         // show an alert
         let alert = UIAlertController(title: "\(correctAnswerCount) out of 10", message: "What do you want to do?", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Try Agian", style: .default, handler: {_ in
-           
+            
             self.updateUI()
         }))
         alert.addAction(UIAlertAction(title: "show Flash Cards", style: .default, handler: { _ in
@@ -205,6 +214,7 @@ class QuizViewController: UIViewController{
             self.modeSelector.selectedSegmentIndex = 0
             self.updateUI()
         }))
+        
         present(alert,animated: true)
         
         
