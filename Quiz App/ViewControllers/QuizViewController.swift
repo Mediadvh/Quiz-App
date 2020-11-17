@@ -62,7 +62,7 @@ class QuizViewController: UIViewController{
     }
     
     // keeps track of the logo
-    var currentLogoIndex = 0
+    var currentLogoIndex : String = ""
     
     // Quiz-specific state
     var answerIsCorrect = false
@@ -87,7 +87,7 @@ class QuizViewController: UIViewController{
     
     @IBAction func showAnswerTapped(_ sender: Any) {
         
-        if( answerLabel.text == Logo.logoList[currentLogoIndex] )
+        if( answerLabel.text == currentLogoIndex)
         {
             // show an alert
             let alert = UIAlertController(title: "answer's already there❗️", message: "" , preferredStyle: .alert)
@@ -103,7 +103,7 @@ class QuizViewController: UIViewController{
     @IBAction func nextLogoTapped(_ sender: Any) {
         
         state = .questionMark
-        currentLogoIndex = Logo.getRandomIndex()
+        currentLogoIndex = Logo.getRandomElement()
         updateUI()
     }
     
@@ -112,11 +112,11 @@ class QuizViewController: UIViewController{
         // sets mode of UI
         if modeSelector.selectedSegmentIndex == 0 {
             mode = .flashCard
-            currentLogoIndex = Logo.getRandomIndex()
+            currentLogoIndex = Logo.getRandomElement()
             updateUI()
         } else {
             mode = .quiz
-            currentLogoIndex = Logo.getRandomIndex()
+            currentLogoIndex = Logo.getRandomElement()
             updateUI()
         }
     }
@@ -135,7 +135,7 @@ class QuizViewController: UIViewController{
             
             // Determine whether the user answered correctly and update appropriate quiz state
             
-            if textFieldContents.lowercased() == Logo.logoList[currentLogoIndex].lowercased() {
+            if textFieldContents.lowercased() == Logo.getRandomElement() {
                 
                 
                 questionIndex += 1
@@ -154,7 +154,7 @@ class QuizViewController: UIViewController{
             
             state = .answer
             
-            currentLogoIndex = Logo.getRandomIndex()
+            currentLogoIndex = Logo.getRandomElement()
             updateUI()
             
         }
@@ -168,13 +168,13 @@ class QuizViewController: UIViewController{
         showAnswer.isHidden = false
         answerTextfield.isHidden = true
         answerLabel.isHidden = false
-        logo.image = UIImage(named : Logo.logoList[currentLogoIndex])
+        logo.image = UIImage(named : Logo.getRandomElement())
         
         answerTextfield.resignFirstResponder()
         
         switch state {
         case .answer:
-            answerLabel.text = Logo.logoList[currentLogoIndex]
+            answerLabel.text = Logo.getRandomElement()
         case .questionMark:
             answerLabel.text = "?"
             
@@ -184,7 +184,7 @@ class QuizViewController: UIViewController{
     
     func updateQuizUI() {
         
-        logo.image = UIImage(named : Logo.logoList[currentLogoIndex])
+        logo.image = UIImage(named : Logo.getRandomElement())
         answerTextfield.isHidden = false
         nextButton.isHidden = false
         nextLogo.isHidden = true
