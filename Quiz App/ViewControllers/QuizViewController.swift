@@ -24,6 +24,8 @@ class QuizViewController: UIViewController{
     @IBOutlet weak var showAnswer:UIButton!
     @IBOutlet weak var nextLogo:UIButton!
     
+    
+    
     // MARK: -Enums
     
     // the mode of app
@@ -35,12 +37,12 @@ class QuizViewController: UIViewController{
     // the state of label
     enum State{
         case answer
-        case question
+        case questionMark
     }
     
     // MARK: -Conastants & Variables
 
-    var state : State = .question
+    var state : State = .questionMark
     
     var mode: Mode = .flashCard {
         //each time the value of mode is updated, the code in the didSet block will run
@@ -95,13 +97,17 @@ class QuizViewController: UIViewController{
         }
         state = .answer
         updateUI()
+        
     }
+    //TODO: Implement newxtLogoTapped IBAction func
     @IBAction func nextLogoTapped(_ sender: Any) {
         
-        state = .question
+        state = .questionMark
         currentLogoIndex = Logo.getRandomIndex()
         updateUI()
     }
+    
+    // TODO: Implement switchModes IBAction func
     @IBAction func switchModes(_ sender: Any) {
         // sets mode of UI
         if modeSelector.selectedSegmentIndex == 0 {
@@ -169,7 +175,7 @@ class QuizViewController: UIViewController{
         switch state {
         case .answer:
             answerLabel.text = Logo.logoList[currentLogoIndex]
-        case .question:
+        case .questionMark:
             answerLabel.text = "?"
             
         }
@@ -192,14 +198,12 @@ class QuizViewController: UIViewController{
     func updateUI() {
         switch mode {
         case .flashCard:
-            
             updateFlashCardUI()
         case .quiz:
-            
             updateQuizUI()
         }
     }
-    
+    // TODO: Implement ShowScore func
     func showScore(){
         
         

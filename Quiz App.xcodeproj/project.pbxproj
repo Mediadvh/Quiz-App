@@ -47,7 +47,6 @@
 		AD1F4742251FA00F000CA937 /* Quiz AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Quiz AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD1F477E251FA966000CA937 /* Logo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logo.swift; sourceTree = "<group>"; };
 		AD523FE62523A34600DA5A9F /* FloatingActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingActionButton.swift; sourceTree = "<group>"; };
-		ADF13DEF2523ACCF00D80275 /* Papyrus.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; path = Papyrus.ttc; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,7 +95,6 @@
 		AD1F4723251FA00E000CA937 /* Quiz App */ = {
 			isa = PBXGroup;
 			children = (
-				ADF13DEF2523ACCF00D80275 /* Papyrus.ttc */,
 				AD1F477D251FA957000CA937 /* Model */,
 				AD1F475B251FA06B000CA937 /* Storyboards */,
 				AD1F475A251FA049000CA937 /* ViewControllers */,
@@ -129,17 +127,9 @@
 		AD1F477D251FA957000CA937 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				ADFB3D9625220CCC00E3235D /* modes */,
 				AD1F477E251FA966000CA937 /* Logo.swift */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		ADFB3D9625220CCC00E3235D /* modes */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = modes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
