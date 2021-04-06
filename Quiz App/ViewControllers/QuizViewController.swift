@@ -152,11 +152,8 @@ class QuizViewController: UIViewController{
             
             currentLogo = Logo.getRandomElement()
             updateUI()
-            
-            
+            }
         }
-        
-    }
     
     // MARK: -Update UI Functions
     func updateFlashCardUI() {

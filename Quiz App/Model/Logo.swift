@@ -5,8 +5,8 @@
 //  Created by Media Davarkhah on 7/5/1399 AP.
 //
 
-import UIKit
 
+import Foundation
 class Logo{
     
      static var lastUsedRandom: String = ""
@@ -31,7 +31,5 @@ class Logo{
         return random!
         
     }
-    
-    
     
 }
